@@ -1,0 +1,114 @@
+@import "./constants.scss";
+
+.textFood {
+  width: 100%;
+  text-align: center;
+  margin-top: -6px;
+
+  &__food {
+    text-align: center;
+    letter-spacing: -0.6px;
+    color: $primaryColor;
+  }
+
+  &__foodDesc {
+    text-align: center;
+    letter-spacing: -0.6px;
+    color: $primaryColor;
+  }
+}
+
+.score {
+  display: flex;
+  flex-direction: row;
+  padding-left: 11.89px;
+  bottom: 12.5px;
+  position: absolute;
+  width: -webkit-fill-available;
+  align-items: center;
+
+  &__span {
+    text-align: left;
+    letter-spacing: -0.52px;
+    color: $secondaryColor;
+    opacity: 1;
+    position: absolute;
+  }
+
+  &__heart {
+    position: absolute;
+    right: 19.91px;
+  }
+}
+
+@media (max-width: 428px) {
+  .normalTarjet {
+    width: 180px;
+  }
+  .textFood {
+    &__foodDesc {
+      font: normal normal normal 20px/27px $Fuente1;
+    }
+
+    &__food {
+      font: normal normal normal 20px/27px $Fuente2;
+    }
+  }
+
+  .score {
+    &__span {
+      font: normal normal normal 17px/26px $Fuente2;
+      left: 33.45px;
+    }
+
+    &__star {
+      height: 16px;
+      width: 16px;
+    }
+
+    &__heart {
+      height: 16px;
+      width: 16px;
+    }
+  }
+}
+
+@media (min-width: 429px) and (max-width: 768px) {
+  .normalTarjet {
+    width: 266px;
+  }
+
+  .textFood {
+    &__foodDesc {
+      font: normal normal normal 30px/40px $Fuente1;
+    }
+
+    &__food {
+      font: normal normal normal 30px/40px $Fuente2;
+    }
+  }
+  .score {
+    &__span {
+      font: normal normal normal 26px/39px $Fuente2;
+      left: 47.5px;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .textFood {
+    &__foodDesc {
+      font: normal normal normal 30px/40px $Fuente1;
+    }
+
+    &__food {
+      font: normal normal normal 30px/40px $Fuente2;
+    }
+  }
+  .score {
+    &__span {
+      font: normal normal normal 26px/39px $Fuente2;
+      left: 47.5px;
+    }
+  }
+}

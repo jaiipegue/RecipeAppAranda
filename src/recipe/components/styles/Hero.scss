@@ -1,0 +1,95 @@
+@import "./constants.scss";
+
+.imgHead {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  contain: content;
+}
+
+.floatText {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+
+  &__primaryText {
+    font: normal normal normal 74px/111px $Fuente2;
+    text-align: left;
+    letter-spacing: 0px;
+    color: $backgroundColorSecondary;
+    opacity: 1;
+    height: 79px;
+  }
+
+  &__secondaryText {
+    font: normal normal normal 67px/91px $Fuente1;
+    text-align: left;
+    letter-spacing: 0px;
+    color: $backgroundColorSecondary;
+    opacity: 1;
+    margin-top: -10px;
+  }
+}
+
+@media (max-width: 428px) {
+  .imgHead {
+    height: 234px;
+    background-image: url(../../../assets/bcq.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+  }
+
+  .floatText {
+    top: 50px;
+    left: 56.5px;
+
+    &__primaryText {
+      font: normal normal normal 51px/77px $Fuente2;
+    }
+
+    &__secondaryText {
+      font: normal normal normal 51px/69px $Fuente1;
+      margin-top: -30px;
+    }
+  }
+}
+
+@media (min-width: 429px) and (max-width: 768px) {
+  .imgHead {
+    height: 249px;
+    background-image: url(../../../assets/bcq.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .floatText {
+    top: 50px;
+    left: 121.55px;
+
+    &__primaryText {
+      font: normal normal normal 74px/111px $Fuente2;
+    }
+
+    &__secondaryText {
+      font: normal normal normal 67px/91px $Fuente1;
+      margin-top: -10px;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .imgHead {
+    height: 416px;
+    background-image: url(./../../../assets/bcq.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .floatText {
+    top: 134px;
+    left: 261px;
+  }
+}

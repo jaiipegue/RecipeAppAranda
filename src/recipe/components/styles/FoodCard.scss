@@ -1,0 +1,74 @@
+@import "./constants.scss";
+
+.tarjet {
+  opacity: 1;
+  position: relative;
+  box-shadow: 10px 10px 20px -5px #cccccc;
+  border-radius: 15px;
+  margin-top: 25px;
+  margin-right: 25.82px;
+  transition: height 0.2s;
+  list-style: none;
+  background: transparent
+    linear-gradient(
+      180deg,
+      $backgroundColorPrimary 0%,
+      $backgroundColorSecondary 100%
+    )
+    0% 0% no-repeat padding-box;
+
+  &__plate {
+    position: relative;
+    top: -25px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 428px) {
+  .tarjet {
+    width: 180px;
+    height: 182px;
+    pointer-events: none;
+
+    &__plate {
+      width: 111px;
+      height: 107px;
+      margin-left: 34.84px;
+    }
+  }
+}
+
+@media (min-width: 429px) and (max-width: 768px) {
+  .tarjet {
+    height: 269px;
+    width: 266px;
+    pointer-events: none;
+
+    &__plate {
+      width: 164px;
+      height: 158px;
+      margin-left: 51.55px;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .tarjet {
+    height: 269px;
+    width: 266px;
+
+    &__plate {
+      width: 164px;
+      height: 158px;
+      margin-left: 51.55px;
+    }
+
+    &:hover {
+      width: 266px;
+      height: 386px;
+      opacity: 1;
+    }
+  }
+}

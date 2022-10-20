@@ -1,0 +1,37 @@
+@import "./constants.scss";
+
+.divhover {
+  top: 145px;
+  position: absolute;
+  width: -webkit-fill-available;
+}
+
+.hoverTarjet {
+  flex-direction: column;
+  display: flex;
+}
+.descriptionHover {
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 15px;
+
+  &__titTextHover {
+    text-align: center;
+    font: normal normal normal 17px/20px $Fuente1;
+    letter-spacing: 0px;
+    color: $primaryColor;
+  }
+
+  &__textHover {
+    text-align: center;
+    font: normal normal normal 15px/20px $Fuente2;
+    letter-spacing: 0px;
+    color: $secondaryColor;
+  }
+  &__imgHover {
+    width: 17px;
+    height: 17px;
+  }
+}

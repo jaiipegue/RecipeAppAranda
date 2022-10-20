@@ -1,0 +1,83 @@
+@import "./constants.scss";
+
+.middle {
+  contain: content;
+  width: 100%;
+  position: absolute;
+}
+
+.middle .middleTitle {
+  text-align: left;
+  letter-spacing: 0px;
+  color: $primaryColor;
+  opacity: 1;
+}
+
+.middle .carrusel {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 5px;
+}
+
+.conCarrusel {
+  overflow: hidden;
+}
+
+@media (max-width: 428px) {
+  .middle {
+    top: 500px;
+  }
+
+  .middle .middleTitle {
+    padding-left: 64px;
+    font: normal normal normal 54px/74px $Fuente1;
+  }
+
+  .middle .carrusel {
+    top: -25px;
+    position: relative;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  #carruselini {
+    display: flex;
+  }
+}
+
+@media (min-width: 429px) and (max-width: 768px) {
+  .middle {
+    top: 406px;
+  }
+
+  .middle .carrusel {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .middle .middleTitle {
+    padding-left: 70px;
+    font: normal normal normal 67px/91px $Fuente1;
+  }
+}
+
+@media (min-width: 769px) {
+  .middle {
+    top: 513px;
+  }
+
+  .middle .carrusel {
+    justify-content: center;
+  }
+
+  .middle .middleTitle {
+    padding-left: 70px;
+    font: normal normal normal 67px/91px $Fuente1;
+  }
+
+  #carruselini {
+    display: flex;
+  }
+}
