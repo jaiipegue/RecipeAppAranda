@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 
 import "./styles/FoodCardHover.scss";
 
@@ -6,10 +6,16 @@ import portionIcon from "../../assets/icons/ic_portion.svg";
 import chefIcon from "../../assets/icons/ic_chef.svg";
 import timeIcon from "../../assets/icons/ic_time.svg";
 
-export const FoodCardHover = () => {
+import { foodCardFinalProps } from "./types";
+
+export const FoodCardHover: FC<foodCardFinalProps> = ({
+  readyInMinutes,
+  servings,
+  difficulty,
+}) => {
   return (
     <>
-      <div className="divhover">
+      <div className="divhover animate__animated animate__fadeIn">
         <div className="hoverTarjet">
           <div className="descriptionHover">
             <img
@@ -20,7 +26,9 @@ export const FoodCardHover = () => {
             <span className="descriptionHover__titTextHover">
               Tamaño de la porción
             </span>
-            <span className="descriptionHover__textHover">4 raciones</span>
+            <span className="descriptionHover__textHover">
+              {servings} raciones
+            </span>
           </div>
           <div className="descriptionHover">
             <img
@@ -31,7 +39,9 @@ export const FoodCardHover = () => {
             <span className="descriptionHover__titTextHover">
               Tiempo de preparación
             </span>
-            <span className="descriptionHover__textHover">10 minutos</span>
+            <span className="descriptionHover__textHover">
+              {readyInMinutes} minutos
+            </span>
           </div>
           <div className="descriptionHover">
             <img
@@ -40,7 +50,7 @@ export const FoodCardHover = () => {
               alt="chef"
             />
             <span className="descriptionHover__titTextHover">Dificultad</span>
-            <span className="descriptionHover__textHover">fácil</span>
+            <span className="descriptionHover__textHover">{difficulty}</span>
           </div>
         </div>
       </div>

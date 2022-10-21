@@ -7,7 +7,6 @@
   border-radius: 15px;
   margin-top: 25px;
   margin-right: 25.82px;
-  transition: height 0.2s;
   list-style: none;
   background: transparent
     linear-gradient(
@@ -23,6 +22,7 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-size: cover;
+    border-radius: 150px;
   }
 }
 
@@ -36,6 +36,7 @@
       width: 111px;
       height: 107px;
       margin-left: 34.84px;
+      border-radius: 150px;
     }
   }
 }
@@ -50,6 +51,7 @@
       width: 164px;
       height: 158px;
       margin-left: 51.55px;
+      border-radius: 150px;
     }
   }
 }
@@ -58,11 +60,13 @@
   .tarjet {
     height: 269px;
     width: 266px;
+    transition: height 0.2s linear;
 
     &__plate {
       width: 164px;
       height: 158px;
       margin-left: 51.55px;
+      border-radius: 150px;
     }
 
     &:hover {

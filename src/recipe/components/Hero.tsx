@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles/Hero.scss";
+
 export const Hero = () => {
   return (
     <>

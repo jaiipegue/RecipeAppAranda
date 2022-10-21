@@ -1,56 +1,54 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { useQuery } from "@tanstack/react-query";
 
-import onigeoImage from "../../assets/Ojingeo-muchim-5.png";
-import { FoodCard } from "./FoodCard";
 import "./styles/NewRecipes.scss";
 
-const data = [
-  {
-    idnormal: "normal1",
-    idhover: "hover1",
-    imgPlate: "./assets/Ojingeo-muchim-5.png",
-    food: "Ojingeo",
-    foodDesc: "Muchim",
-    calification: "5.0",
-  },
-  {
-    idnormal: "normal1",
-    idhover: "hover1",
-    imgPlate: "./assets/Ojingeo-muchim-5.png",
-    food: "Ojingeo",
-    foodDesc: "Muchim",
-    calification: "5.0",
-  },
-  {
-    idnormal: "normal1",
-    idhover: "hover1",
-    imgPlate: "./assets/Ojingeo-muchim-5.png",
-    food: "Ojingeo",
-    foodDesc: "Muchim",
-    calification: "5.0",
-  },
-  {
-    idnormal: "normal1",
-    idhover: "hover1",
-    imgPlate: "./assets/Ojingeo-muchim-5.png",
-    food: "Ojingeo",
-    foodDesc: "Muchim",
-    calification: "5.0",
-  },
-];
+import { getRecipes } from "../../services";
+import { getCalificationRandom, getDiffcultyRandom } from "../../helpers";
+
+import { FoodCard, Spinner, ErrorMessage } from "./";
 
 export const NewRecipes = () => {
+  const selectFoodType = useSelector((state: any) => state.recipe);
+
+  const {
+    data: recipes,
+    isLoading,
+    isFetching,
+    error,
+  } = useQuery([selectFoodType], () => getRecipes(selectFoodType.queryParams), {
+    refetchOnWindowFocus: false,
+  });
+
+  if (isLoading || isFetching) {
+    return (
+      <>
+        <Spinner />;
+      </>
+    );
+  }
+
+  if (error) {
+    return <ErrorMessage />;
+  }
+
   return (
     <>
       <div className="middle">
-        <div className="middleTitle">Nuevas Recetas</div>
+        <div className="middleTitle">
+          {selectFoodType.name === "Home"
+            ? `Nuevas Recetas`
+            : `${selectFoodType.name}`}
+        </div>
         <div className="contCarrusel">
           <ul id="carruselini" className="carrusel">
-            {data.map((plate) => (
+            {recipes.map((food: any) => (
               <FoodCard
-                key={plate.idhover + Math.random()}
-                idHover={plate.idhover}
-                onigeoImage={onigeoImage}
+                key={food.id}
+                {...food}
+                score={getCalificationRandom(1, 5)}
+                difficulty={getDiffcultyRandom()}
               />
             ))}
           </ul>

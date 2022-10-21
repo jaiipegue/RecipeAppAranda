@@ -1,0 +1,32 @@
+@import "./constants.scss";
+
+.error {
+  padding-top: 30px;
+  text-align: center;
+
+  &__title {
+    font-family: $Fuente1;
+    font-size: 80px;
+    color: $secondaryColor;
+    font-weight: 200;
+  }
+  &__subtitle {
+    font-family: $Fuente2;
+    color: $primaryColor;
+  }
+}
+
+@media (max-width: 428px) {
+  .error {
+    display: block;
+    padding-top: 230px;
+
+    &__title {
+      font-size: 40px;
+    }
+
+    &__subtitle {
+      font-size: 20px;
+    }
+  }
+}
