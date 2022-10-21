@@ -24,7 +24,7 @@ export const FoodCard: FC<foodCardInitialProps> = ({
       <li
         onMouseDown={() => openInNewTab(sourceUrl)}
         className="tarjet"
-        onMouseEnter={() => setIsShowHover("true")}
+        onMouseOver={() => setIsShowHover("true")}
         onMouseOut={() => setIsShowHover("false")}
       >
         <img className="tarjet__plate" src={image} alt="plate"></img>
