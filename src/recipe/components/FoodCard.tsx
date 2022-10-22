@@ -7,6 +7,13 @@ import { openInNewTab } from "../../helpers";
 import { FoodCardHover, FoodCardMain } from "./";
 import { foodCardInitialProps } from "./types";
 
+const isMobile = () => {
+  if (window.screen.width < 769) {
+    return true;
+  }
+  return false;
+};
+
 export const FoodCard: FC<foodCardInitialProps> = ({
   readyInMinutes,
   servings,
@@ -28,7 +35,7 @@ export const FoodCard: FC<foodCardInitialProps> = ({
         onMouseOut={() => setIsShowHover("false")}
       >
         <img className="tarjet__plate" src={image} alt="plate"></img>
-        {isShowHover === "true" ? (
+        {isShowHover === "true" && isMobile() === false ? (
           <FoodCardHover
             readyInMinutes={readyInMinutes}
             servings={servings}

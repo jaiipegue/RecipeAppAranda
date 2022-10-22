@@ -38,7 +38,7 @@ export const Header = () => {
             </ul>
           </div>
           <div
-            onClick={() => handleNewRecipes("Home")}
+            onClick={() => handleNewRecipes(ItemNavbar[0])}
             className="icoHome"
           ></div>
         </div>
