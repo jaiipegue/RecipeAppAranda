@@ -2,7 +2,7 @@ import React, { useState, FC } from "react";
 
 import "./styles/FoodCard.scss";
 import "animate.css";
-
+import plateImage from "../../assets/Ojingeo-muchim-1.png";
 import { isMobile, openInNewTab } from "../../helpers";
 import { FoodCardHover, FoodCardMain } from "./";
 import { foodCardInitialProps } from "./types";
@@ -11,7 +11,7 @@ export const FoodCard: FC<foodCardInitialProps> = ({
   readyInMinutes,
   servings,
   title,
-  image,
+  image = plateImage,
   sourceUrl,
   index,
   score,
