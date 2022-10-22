@@ -19,13 +19,21 @@ export const FoodCard: FC<foodCardInitialProps> = ({
 }) => {
   const [isShowHover, setIsShowHover] = useState("false");
 
+  const showHover = () => {
+    setIsShowHover("true");
+  };
+
+  const unshowHover = () => {
+    setIsShowHover("false");
+  };
+
   return (
     <>
       <li
         onMouseDown={() => openInNewTab(sourceUrl)}
         className="tarjet"
-        onMouseOver={() => setIsShowHover("true")}
-        onMouseOut={() => setIsShowHover("false")}
+        onMouseOver={showHover}
+        onMouseLeave={unshowHover}
       >
         <img className="tarjet__plate" src={image} alt="plate"></img>
         {isShowHover === "true" && isMobile() === false ? (
