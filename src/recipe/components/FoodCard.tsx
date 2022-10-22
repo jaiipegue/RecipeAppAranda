@@ -3,16 +3,9 @@ import React, { useState, FC } from "react";
 import "./styles/FoodCard.scss";
 import "animate.css";
 
-import { openInNewTab } from "../../helpers";
+import { isMobile, openInNewTab } from "../../helpers";
 import { FoodCardHover, FoodCardMain } from "./";
 import { foodCardInitialProps } from "./types";
-
-const isMobile = () => {
-  if (window.screen.width < 769) {
-    return true;
-  }
-  return false;
-};
 
 export const FoodCard: FC<foodCardInitialProps> = ({
   readyInMinutes,
